@@ -11,7 +11,6 @@ plt.xlabel('Number of Hours Studied')
 plt.ylabel('Score in Final Exam')
 plt.title('Effect of Hours Studied on Exam Score')
 
-# Displaying the plot
 plt.grid(True)
 plt.show()
 
@@ -208,16 +207,11 @@ print(response.status_code)
 
 if response.status_code == 200:
     soup = BeautifulSoup(response.text, 'html.parser')
-
     posts = soup.find_all('div', class_='v1Nh3')
-
     for post in posts:
         print("Hi")
-        # Extract post link
         post_link = post.find('a')['href']
-
         image_url = post.find('img')['src']
-
         print(f"Post Link: {post_link}")
         print(f"Image URL: {image_url}")
         print("------")
